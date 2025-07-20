@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/admin/add}">
+    <label for="person">People</label>
+    <select id="person" th:object="${person}" th:field="*{id}">
+        <option th:each="person : ${people}" th:value="${person.getId()}" th:text="${person.getName()}"></option>
+    </select>
+
+    <input type="submit" value="Admin!!!" />
+</form>
+</body>
+</html>
